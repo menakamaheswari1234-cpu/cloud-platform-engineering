@@ -1,0 +1,16 @@
+region                         = "ap-south-1"
+name                           = "platform"
+environment                    = "prod"
+vpc_cidr                       = "10.20.0.0/16"
+az_count                       = 3
+cluster_version                = "1.33"
+cluster_endpoint_public_access = true
+cluster_public_access_cidrs    = ["203.0.113.10/32"]
+on_demand_instance_types       = ["t3.large"]
+spot_instance_types            = ["t3.large", "t3a.large", "m5.large"]
+on_demand_min_size             = 2
+on_demand_max_size             = 6
+on_demand_desired_size         = 2
+spot_min_size                  = 0
+spot_max_size                  = 4
+spot_desired_size              = 1

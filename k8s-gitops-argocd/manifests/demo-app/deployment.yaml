@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+  namespace: demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: demo-app}
+  template:
+    metadata:
+      labels: {app: demo-app}
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: demo-app
+          image: ghcr.io/stefanprodan/podinfo:6.7.0
+          ports: [{containerPort: 9898}]
+          resources:
+            requests: {cpu: 100m, memory: 64Mi}
+            limits: {cpu: 300m, memory: 128Mi}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {drop: ["ALL"]}
