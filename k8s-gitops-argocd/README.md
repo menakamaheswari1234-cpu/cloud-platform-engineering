@@ -1,6 +1,6 @@
 # Kubernetes GitOps with ArgoCD
 
-Git is the single source of truth: ArgoCD continuously syncs this repo to the cluster with self-heal and pruning. A reference implementation of the GitOps workflow I run across Dev/QA/UAT/Prod to reduce config drift and rollback time.
+Git is the single source of truth: ArgoCD continuously syncs this repo to the cluster with self-heal and pruning. A reference implementation of the GitOps workflow I run across Dev/QA/UAT/Prod to reduce config drift and rollback time .
 
 ## Structure
 ```
